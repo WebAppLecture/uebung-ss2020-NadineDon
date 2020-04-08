@@ -1,0 +1,20 @@
+ .accent {
+    animation: rotate 3s normal linear infinite;
+    right: .2vh;
+    bottom: .2vh;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    z-index: -1;
+ }
+
+.accent:before {
+    content: "Servus !";
+    text-size: 
+}
+
+@keyframes rotate {
+    from { transform: rotate(-85deg)}
+    to { transform: rotate(40deg)}
+    }
+
