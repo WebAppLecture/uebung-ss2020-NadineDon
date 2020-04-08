@@ -1,0 +1,19 @@
+ .accent {
+    animation: text-annimation 3s normal linear infinite;
+    right: .8vh;
+    nav-down: .8vh;
+    width: 9vh;
+    height: 3vh;
+    border-radius: 100%;
+    z-index: -1;
+ }
+
+.accent:before {
+    content: "Let´s play!";
+}
+
+@keyframes text-annimation {
+    to {transform: scale(2.5) translate(-85%, -90%);}
+
+    }
+
