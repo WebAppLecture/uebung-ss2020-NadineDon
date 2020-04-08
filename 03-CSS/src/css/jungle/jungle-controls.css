@@ -1,0 +1,58 @@
+.controls > *,
+.skin-change > div {
+    background-color: var(--brown);
+
+    font-size: 3vh;
+    text-align: center;
+
+    background: linear-gradient(
+        0deg, 
+        rgb(36, 19, 19) 5%,
+        var(--dark-brown) 40%,
+        var(--brown) 40%, 
+        var(--brown) 60%,
+        var(--dark-brown) 10%,
+        rgb(34, 233, 61) 100%
+        );
+
+    box-shadow: 0 0 .9vh 0 rgb(13, 11, 17);
+}
+
+.controls > *{
+    font-size: 3vh;
+
+}
+
+.d-pad {
+    background: linear-gradient(
+        90deg, 
+        rgb(59, 243, 13) 0%,
+        var(--dark-brown) 30%,
+        var(--brown) 40%, 
+        var(--brown) 10%,
+        var(--dark-brown) 90%,
+        rgb(15, 61, 25) 100%
+        );
+
+    border-radius: 11vh;
+    border-bottom-left-radius: 10% 10%;
+    border-top-right-radius: 10% 70%;
+    
+
+}
+
+.skin-change > div {
+    width: 5vh;
+    height: 4vh;
+    margin-right: 1vh;
+}
+
+.previous {
+    border-top-left-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+}
+
+.next {
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+}
