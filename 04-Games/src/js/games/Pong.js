@@ -24,15 +24,6 @@ export class Pong extends GameTemplate{
         }
     }
 
-    bindControls() {
-        this.inputBinding = {
-            "up": this.leftPaddle.up.bind(this.leftPaddle), 
-            "down": this.leftPaddle.down.bind(this.leftPaddle),  
-            "primary": this.rightPaddle.up.bind(this.rightPaddle),
-            "secondary": this.rightPaddle.down.bind(this.rightPaddle),
-        };
-    }
-
 
 
     update(ctx) {
@@ -146,10 +137,18 @@ export class Pong extends GameTemplate{
         ];
     }
 
+bindControls() {
+    this.inputBinding = {
+        "up": this.leftPaddle.up.bind(this.leftPaddle), 
+        "down": this.leftPaddle.down.bind(this.leftPaddle),  
+        "primary": this.rightPaddle.up.bind(this.rightPaddle),
+        "secondary": this.rightPaddle.down.bind(this.rightPaddle),
+    };
+}
 }
 
 export class Paddle extends MovableGameObject {
-    
+    // 
     constructor(x, y, width, height, speed) {
         super(x, y, width, height, "#6bd26b", 0, 0);
         this.speed = speed;
