@@ -58,7 +58,7 @@ export class MovableGameObject extends GameObject {
     }
 
     update() {
-        this.x += this.vx;
+        this.x += this.vx; //position at x-coordinate increases to current speed
         this.y += this.vy;
     }
 }
