@@ -26,7 +26,7 @@ export class FallingStones extends GameTemplate {
     }
 
     createProjectil(bool) {
-        if(bool && this.tickCounterProjectil >= 40) { //creates just one projectil per keypress, possible after 40 frames
+        if(bool && this.tickCounterProjectil >= 40) { //creates just one projectil per keypress, possible after 40 ticks
             let projectil = new MovableGameObject(this.player.x, this.player.y, 10, 10, "red",0 , -6); //set coordinates of player position
             this.bullets.push(projectil),
             this.keydown = true,
@@ -43,7 +43,7 @@ export class FallingStones extends GameTemplate {
             this.bullets[i].update(ctx); //update coordinates of all projectiles
             for (let m = this.stones.length -1; m >= 0; m--) {
                 if (this.bullets[i].y >= this.stones[m].y && this.bullets[i].y <= this.stones[m].y + 100){
-                    if (this.bullets[i].x >= this.stones[m].x && this.bullets[i].x <= this.stones[m].x + 50) {
+                    if (this.bullets[i].x +10 >= this.stones[m].x && this.bullets[i].x <= this.stones[m].x + 50) {
                         this.bullets.splice(i, 1), //removes projectil and stone by contact
                         this.stones.splice(m, 1);
                         this.points++;
@@ -63,17 +63,17 @@ export class FallingStones extends GameTemplate {
         if(this.stones.length > 0 && this.stones[0].y == 500) { //delete stone at end of screen
             this.stones.shift(),
             this.life--;
+            if (this.life <= 0) {
+                this.gameOverText.push("Points: " + this.points),
+                this.gameOver=true;
+            } 
         }
-        if (this.life == 0) {
-            this.gameOverText.push("Points: " + this.points),
-            this.gameOver=true;
-        } 
         this.tickCounterStone++;
         this.tickCounterProjectil++;
     }
 
     createStones() {
-        if (this.tickCounterStone % 80 == 0) { //creates first stone by 90ticks, creates stone by 150 ticks
+        if (this.tickCounterStone % 80 == 0) { //creates stone by 150 ticks
             let stone = new MovableGameObject(Math.random()*350, -100, 50, 100, "grey", 0, 2);
             this.stones.push(stone);
         }
